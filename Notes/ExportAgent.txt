@@ -1,0 +1,21 @@
+Sub Initialize
+	Dim ws As New NotesSession
+	Dim db As NotesDatabase
+	
+	Dim exporter As NotesDxlExporter
+	Dim streamOut  As NotesStream
+	
+	Set db = ws.GetDatabase( "<HOST>", "<DB-PATH>.nsf" )
+	
+	Set streamOut = ws.CreateStream()
+	streamOut.Open "<OUTPUT-FILE>.xml", "utf-8"
+	streamOut.Truncate
+	
+	Set exporter = ws.CreateDXLExporter(db, streamOut)
+	exporter.ConvertNotesbitmapsToGIF  = True
+	Call exporter.Process()
+	streamOut.Close
+	
+	Msgbox "Finished"
+End Sub
+
