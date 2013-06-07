@@ -1,0 +1,11 @@
+Liberating Lotus Notes databases
+
+It is easy to get data out of Lotus Notes. Easy, that is, once you spend 3 months learning obscure languages (LotusScript) and reading documentation backwards.
+
+And then, when you got your data out, you are looking at multi-megabyte files with obscure XML schema. So, you need a streaming framework to process it document by document.
+
+It is easy. At least for those who use my code. This repository includes LotusNotes Agent to get data out and basic Java framework to then process it.
+
+The code has been used in several production scenarios.
+
+Enjoy.
